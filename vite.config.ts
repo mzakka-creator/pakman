@@ -6,9 +6,12 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Production builds must use the Vercel preset so static assets land in `.vercel/output/static`.
 const nitroPreset =
   process.env.NITRO_PRESET ??
-  (process.env.VERCEL ? "vercel" : "cloudflare-module");
+  (process.env.VERCEL || process.env.CI || process.env.NODE_ENV === "production"
+    ? "vercel"
+    : "cloudflare-module");
 
 export default defineConfig({
   tanstackStart: {

@@ -8,28 +8,16 @@ import { Logo } from "@/components/brand/Logo";
 import { Intro } from "./Intro";
 import { content, type Lang } from "./content";
 
-import heroImg from "@/assets/hero-arrangement.jpg";
-import aboutImg from "@/assets/about-arrangement.jpg";
-import saudiMap from "@/assets/saudi-map.jpg";
-
-import { categoryImages } from "./categories";
-
-import subbie from "@/assets/clients/subbie.jpeg";
-import btc from "@/assets/clients/btc.jpeg";
-import tastingSpoon from "@/assets/clients/tasting-spoon.jpeg";
-import evolve from "@/assets/clients/evolve.jpeg";
-import prepd from "@/assets/clients/prepd.jpeg";
-import fornia from "@/assets/clients/fornia.jpeg";
-import circleSection from "@/assets/clients/circle-section.jpeg";
+import { categoryImages, siteImages } from "@/lib/site-images";
 
 const clientLogos = [
-  { name: "Subbie", url: subbie, transparent: true },
-  { name: "Basamh Trading Company", url: btc, transparent: false },
-  { name: "Tasting Spoon Catering", url: tastingSpoon, transparent: false },
-  { name: "Evolve", url: evolve, transparent: false },
-  { name: "Prepd", url: prepd, transparent: false },
-  { name: "Fornia", url: fornia, transparent: false },
-  { name: "Circle Section", url: circleSection, transparent: false },
+  { name: "Subbie", url: siteImages.clients.subbie, transparent: true },
+  { name: "Basamh Trading Company", url: siteImages.clients.btc, transparent: false },
+  { name: "Tasting Spoon Catering", url: siteImages.clients.tastingSpoon, transparent: false },
+  { name: "Evolve", url: siteImages.clients.evolve, transparent: false },
+  { name: "Prepd", url: siteImages.clients.prepd, transparent: false },
+  { name: "Fornia", url: siteImages.clients.fornia, transparent: false },
+  { name: "Circle Section", url: siteImages.clients.circleSection, transparent: false },
 ];
 
 const workImages = categoryImages;
@@ -201,7 +189,7 @@ export function PakmanSite({ lang }: { lang: Lang }) {
           <div className="lg:col-span-7 reveal">
             <div className="relative aspect-[16/11] overflow-hidden rounded-2xl shadow-[0_40px_120px_-40px_oklch(0_0_0/0.7)] border border-white/5">
               <img
-                src={heroImg}
+                src={siteImages.hero}
                 alt=""
                 width={1920}
                 height={1320}
@@ -284,7 +272,7 @@ export function PakmanSite({ lang }: { lang: Lang }) {
 
           <div className="mt-20 grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
             <div className="lg:col-span-8 reveal relative overflow-hidden rounded-2xl border border-white/5" style={{ minHeight: "520px" }}>
-              <img src={aboutImg} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.05]" />
+              <img src={siteImages.about} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.05]" />
             </div>
             <div className="lg:col-span-4 reveal dark-card p-8 md:p-10 flex flex-col gap-6 justify-between" style={{ minHeight: "520px" }}>
               {[
@@ -466,7 +454,7 @@ export function PakmanSite({ lang }: { lang: Lang }) {
       <section id="location" className="dark-section border-t border-white/5 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={saudiMap}
+            src={siteImages.saudiMap}
             alt=""
             loading="lazy"
             width={1920}
