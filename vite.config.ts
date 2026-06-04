@@ -12,4 +12,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Required for self-hosted Vercel deploys: Lovable sandbox enables nitro automatically,
+  // but GitHub/Vercel CI builds skip it unless explicitly configured.
+  nitro: {
+    preset:
+      process.env.NITRO_PRESET ??
+      (process.env.VERCEL ? "vercel" : "cloudflare-module"),
+  },
 });
