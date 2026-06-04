@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/pakman-logo.asset.json";
+import pakmanLogo from "@/assets/pakman-logo.jpeg";
 
 export function Intro({ onDone, tagline }: { onDone: () => void; tagline: string }) {
   const [stage, setStage] = useState(0); // 0 symbol, 1 logo, 2 tagline, 3 fading out
@@ -25,11 +25,11 @@ export function Intro({ onDone, tagline }: { onDone: () => void; tagline: string
         >
           {/* symbol = scaled crop of logo (we just use the whole logo, animated) */}
           <img
-            src={logoAsset.url}
-            alt=""
-            className="object-contain transition-all duration-700 ease-out invert brightness-0 contrast-200"
+            src={pakmanLogo}
+            alt="Pakman Packaging Solutions"
+            className="object-contain transition-all duration-700 ease-out"
             style={{
-              width: stage === 0 ? "72px" : "260px",
+              width: stage === 0 ? "72px" : "min(320px, 85vw)",
               height: stage === 0 ? "72px" : "auto",
               filter: "invert(1) brightness(2)",
               objectFit: "contain",

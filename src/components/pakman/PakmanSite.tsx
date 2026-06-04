@@ -14,22 +14,22 @@ import saudiMap from "@/assets/saudi-map.jpg";
 
 import { categoryImages } from "./categories";
 
-import subbie from "@/assets/clients/subbie.png.asset.json";
-import btc from "@/assets/clients/btc.jpg.asset.json";
-import tastingSpoon from "@/assets/clients/tasting-spoon.jpg.asset.json";
-import evolve from "@/assets/clients/evolve.jpg.asset.json";
-import prepd from "@/assets/clients/prepd.jpg.asset.json";
-import fornia from "@/assets/clients/fornia.jpg.asset.json";
-import circleSection from "@/assets/clients/circle-section.png.asset.json";
+import subbie from "@/assets/clients/subbie.jpeg";
+import btc from "@/assets/clients/btc.jpeg";
+import tastingSpoon from "@/assets/clients/tasting-spoon.jpeg";
+import evolve from "@/assets/clients/evolve.jpeg";
+import prepd from "@/assets/clients/prepd.jpeg";
+import fornia from "@/assets/clients/fornia.jpeg";
+import circleSection from "@/assets/clients/circle-section.jpeg";
 
 const clientLogos = [
-  { name: "Subbie", url: subbie.url, transparent: true },
-  { name: "Basamh Trading Company", url: btc.url, transparent: false },
-  { name: "Tasting Spoon Catering", url: tastingSpoon.url, transparent: false },
-  { name: "Evolve", url: evolve.url, transparent: false },
-  { name: "Prepd", url: prepd.url, transparent: false },
-  { name: "Fornia", url: fornia.url, transparent: false },
-  { name: "Circle Section", url: circleSection.url, transparent: true },
+  { name: "Subbie", url: subbie, transparent: true },
+  { name: "Basamh Trading Company", url: btc, transparent: false },
+  { name: "Tasting Spoon Catering", url: tastingSpoon, transparent: false },
+  { name: "Evolve", url: evolve, transparent: false },
+  { name: "Prepd", url: prepd, transparent: false },
+  { name: "Fornia", url: fornia, transparent: false },
+  { name: "Circle Section", url: circleSection, transparent: false },
 ];
 
 const workImages = categoryImages;
