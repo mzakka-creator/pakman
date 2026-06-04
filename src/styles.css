@@ -1,0 +1,317 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Pakman Packaging Solutions — Brand Foundation
+ * Palette extracted from the matte black logo on warm off-white surface.
+ * Strictly monochrome: charcoal, graphite, concrete, warm gray. No color.
+ */
+
+@font-face { font-display: swap; }
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&display=swap");
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand monochrome scale */
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-2: var(--charcoal-2);
+  --color-graphite: var(--graphite);
+  --color-concrete: var(--concrete);
+  --color-warm-gray: var(--warm-gray);
+  --color-canvas: var(--canvas);
+  --color-bone: var(--bone);
+  --color-sand: var(--sand);
+  --color-champagne: var(--champagne);
+  --color-champagne-deep: var(--champagne-deep);
+  --color-hairline: var(--hairline);
+
+  --font-sans: "Inter", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "IBM Plex Sans Arabic", sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px oklch(0 0 0 / 0.04);
+  --shadow-elevated: 0 2px 4px oklch(0 0 0 / 0.06), 0 24px 48px -12px oklch(0 0 0 / 0.10);
+
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette — warm luxury greige / stone / taupe + dark luxury surfaces */
+  --charcoal:   oklch(0.18 0.005 60);
+  --charcoal-2: oklch(0.22 0.006 60);
+  --graphite:   oklch(0.38 0.008 65);
+  --concrete:   oklch(0.58 0.010 70);
+  --warm-gray:  oklch(0.74 0.012 75);
+  --taupe:      oklch(0.78 0.018 75);
+  --hairline:   oklch(0.84 0.012 75);
+  --bone:       oklch(0.90 0.015 78);
+  --canvas:     oklch(0.93 0.013 80);
+  --sand:       oklch(0.88 0.020 78);
+
+  /* Champagne gold luxury accent */
+  --champagne:  oklch(0.82 0.060 85);
+  --champagne-deep: oklch(0.70 0.070 80);
+
+  /* Semantic tokens (light surface default) */
+  --background: var(--canvas);
+  --foreground: var(--charcoal);
+  --card: oklch(0.96 0.010 80);
+  --card-foreground: var(--charcoal);
+  --popover: oklch(0.96 0.010 80);
+  --popover-foreground: var(--charcoal);
+  --primary: var(--charcoal);
+  --primary-foreground: var(--canvas);
+  --secondary: var(--bone);
+  --secondary-foreground: var(--charcoal);
+  --muted: var(--bone);
+  --muted-foreground: var(--graphite);
+  --accent: var(--champagne);
+  --accent-foreground: var(--charcoal);
+  --destructive: oklch(0.45 0.12 25);
+  --destructive-foreground: var(--canvas);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--graphite);
+}
+
+.dark {
+  --background: var(--charcoal);
+  --foreground: var(--canvas);
+  --card: oklch(0.24 0.006 60);
+  --card-foreground: var(--canvas);
+  --popover: oklch(0.24 0.006 60);
+  --popover-foreground: var(--canvas);
+  --primary: var(--canvas);
+  --primary-foreground: var(--charcoal);
+  --secondary: oklch(0.28 0.006 60);
+  --secondary-foreground: var(--canvas);
+  --muted: oklch(0.28 0.006 60);
+  --muted-foreground: var(--concrete);
+  --accent: oklch(0.32 0.008 65);
+  --accent-foreground: var(--canvas);
+  --border: oklch(1 0 0 / 0.08);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: var(--concrete);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    letter-spacing: -0.005em;
+  }
+
+  /* Arabic typography — IBM Plex Sans Arabic + Noto Kufi Arabic for premium feel */
+  :where([dir="rtl"]) body,
+  :where([dir="rtl"]) {
+    font-family: "IBM Plex Sans Arabic", "Tajawal", "Segoe UI", system-ui, sans-serif;
+    font-feature-settings: "kern", "liga", "calt";
+    letter-spacing: 0;
+    line-height: 1.8;
+    font-weight: 400;
+  }
+  :where([dir="rtl"]) h1,
+  :where([dir="rtl"]) h2,
+  :where([dir="rtl"]) h3,
+  :where([dir="rtl"]) h4,
+  :where([dir="rtl"]) h5 {
+    font-family: "Noto Kufi Arabic", "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    letter-spacing: 0;
+    line-height: 1.35;
+    font-weight: 700;
+    word-spacing: 0.02em;
+  }
+  :where([dir="rtl"]) .eyebrow {
+    letter-spacing: 0.14em;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    font-weight: 500;
+  }
+  :where([dir="rtl"]) p {
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    color: var(--color-foreground);
+  }
+
+  ::selection { background: var(--charcoal); color: var(--canvas); }
+}
+
+/* ───────── Display utilities ───────── */
+@utility display-1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+@utility display-2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+@utility heading-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+@utility body-lg {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--graphite);
+}
+
+/* ───────── Layout primitives ───────── */
+@utility container-x {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  max-width: 80rem;
+}
+@utility section-y { padding-block: clamp(5rem, 10vw, 9rem); }
+@utility hairline { border-color: var(--hairline); }
+
+/* ───────── Surfaces ───────── */
+@utility surface-card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-xl);
+  transition: transform 0.5s var(--ease-premium), box-shadow 0.5s var(--ease-premium), border-color 0.3s var(--ease-premium);
+}
+@utility surface-card-hover {
+  border-color: oklch(from var(--charcoal) l c h / 0.18);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+/* ───────── Motion ───────── */
+@utility fade-up {
+  animation: fadeUp 0.9s var(--ease-premium) both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s var(--ease-premium), transform 1s var(--ease-premium);
+  will-change: opacity, transform;
+}
+@utility reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Premium client card surface */
+@utility client-card {
+  background: linear-gradient(155deg, var(--sand) 0%, var(--bone) 100%);
+  border: 1px solid color-mix(in oklab, var(--charcoal) 8%, transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 0.03), 0 12px 32px -16px oklch(0 0 0 / 0.10);
+  transition: transform 0.6s var(--ease-premium), box-shadow 0.6s var(--ease-premium), border-color 0.4s var(--ease-premium);
+}
+.client-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px oklch(0 0 0 / 0.05), 0 28px 56px -20px oklch(0 0 0 / 0.16);
+  border-color: color-mix(in oklab, var(--charcoal) 18%, transparent);
+}
+@utility client-card-hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px oklch(0 0 0 / 0.05), 0 28px 56px -20px oklch(0 0 0 / 0.16);
+  border-color: color-mix(in oklab, var(--charcoal) 18%, transparent);
+}
+
+/* Dark luxury surfaces */
+@utility dark-section {
+  background:
+    radial-gradient(1200px 600px at 80% 0%, oklch(0.28 0.012 70 / 0.55), transparent 60%),
+    radial-gradient(1000px 500px at 0% 100%, oklch(0.26 0.010 65 / 0.45), transparent 60%),
+    linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
+  color: var(--canvas);
+}
+@utility dark-card {
+  background: linear-gradient(160deg, oklch(0.24 0.006 65) 0%, oklch(0.20 0.005 60) 100%);
+  border: 1px solid oklch(1 0 0 / 0.07);
+  border-radius: var(--radius-xl);
+  transition: transform 0.6s var(--ease-premium), border-color 0.4s var(--ease-premium), box-shadow 0.6s var(--ease-premium);
+}
+.dark-card:hover {
+  transform: translateY(-3px);
+  border-color: oklch(from var(--champagne) l c h / 0.45);
+  box-shadow: 0 20px 60px -20px oklch(0 0 0 / 0.6);
+}
+@utility gold-rule {
+  background: linear-gradient(90deg, transparent, var(--champagne) 30%, var(--champagne) 70%, transparent);
+  height: 1px;
+}
+@utility gold-dot {
+  background: var(--champagne);
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Hairline override for legacy uses */
+[dir="rtl"] :where(.font-display, h1, h2, h3, h4) {
+  font-family: "Noto Kufi Arabic", "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+
